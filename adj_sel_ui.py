@@ -137,7 +137,7 @@ class AdjustSelectionUiCommand(sublime_plugin.TextCommand):
                     sublime.set_timeout(check, timeout_ms)
                 else:
                     sublime.message_dialog('A selection adjustment process stayed active for "too long". Operation cancelled.')
-                    self.view.run_command("region_nudger_escape")
+                    self.view.run_command("region_nudger_escape", {"ending_as": "cancel"})
                     self.view.settings().set("adj_sel_cancelled", True)  # A signal for the caller to react
                     cancel_operation()
         self.view.settings().erase("adj_sel_cancelled")  # Ensure this signal doesn't remain lingering as region_nudger just started
