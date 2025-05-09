@@ -18,4 +18,7 @@ for the esc key to work properly, the following entry must be added to the key-b
 	},
 ```
 
+JUST IN CASE, for whatever reason why that this plugin is interrupted and that your file/view/buffer remains editing/modification disabled: just open up your console panel ( usually by ctrl+\` ) and enter the expression below. thereafter, the "disable"ment should be no more. to close the console panel, press esc.
+- `view.settings().erase("region_nudger_active")`
+
 # If you appreciate my work, i will be very grateful if you can support my work by making small sum donation thru PayPal with `Send payment to` entered as `headwindtrend@gmail.com`. Thank you very much for your support.
