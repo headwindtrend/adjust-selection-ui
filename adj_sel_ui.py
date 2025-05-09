@@ -4,12 +4,12 @@ import time
 
 class AdjustSelectionUiCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        self.view.settings().set("adj_sel_ui_active", True)
-        self.selection_saved = list(self.view.sel())
         self.regions = list(self.view.sel())
         if not self.regions:
             print("Make a selection first.")
             return
+        self.selection_saved = list(self.view.sel())
+        self.view.settings().set("adj_sel_ui_active", True)
 
         self.view.sel().clear()
 
